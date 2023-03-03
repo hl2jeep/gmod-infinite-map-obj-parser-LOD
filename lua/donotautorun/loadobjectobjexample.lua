@@ -13,7 +13,6 @@ mat:SetScale(Vector(1, 1, 1) * 39.3701)	// Conversion from Meters to Inches
 
 // Create our visual model, note the "1" which means it is ONLY visual
 InfMap.parse_obj("0_0_0", mat, 1, "nocull")
-InfMap.parse_obj("0_1_0", mat, 1, "nocull")
 
 
 // Create our physical model, note the "2" which means it is ONLY collision
