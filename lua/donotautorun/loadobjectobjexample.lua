@@ -1,6 +1,6 @@
 
 // Clear pervious data if it exists
---InfMap.clear_parsed_objects()
+InfMap.clear_parsed_objects()
 // Create a matrix to scale the model
 local mat = Matrix()
 mat:SetTranslation(Vector(0, 0, 0))		// Sets the models position
