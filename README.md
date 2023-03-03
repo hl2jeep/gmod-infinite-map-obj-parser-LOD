@@ -8,6 +8,12 @@ This is an example map with the obj LOD system.
 LOD gets called only when the client player moves from their current chunk,
 this is to prevent memory leaks.
 
+### lod working:
+![alt text](https://github.com/hl2jeep/gmod-infinite-map-obj-parser-LOD/blob/main/gifs/pt1.gif?raw=true)
+
+### different lod position for each obj file:
+![alt text](https://github.com/hl2jeep/gmod-infinite-map-obj-parser-LOD/blob/main/gifs/pt2.gif?raw=true)
+
 The setup guide below assumes you are already familiar with the some of the obj parser
 
 if you are not familiar with the obj parser, [Click here to go to mee's obj parser example.](https://github.com/Mee12345/Infinite-Map-OBJ-Example)
