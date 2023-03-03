@@ -1,13 +1,11 @@
 
 // Clear pervious data if it exists
 --InfMap.clear_parsed_objects()
---clearTable2(InfMap.parsed_object_names)
 // Create a matrix to scale the model
 local mat = Matrix()
 mat:SetTranslation(Vector(0, 0, 0))		// Sets the models position
 mat:SetAngles(Angle(0, 0, 0))			// Sets the models rotation
 mat:SetScale(Vector(1, 1, 1) * 39.3701)	// Conversion from Meters to Inches
-//Entity(1):SetPos(Vector(-3357, -1544, -600)) 
 // visuals = 1
 // collision = 2
 // nocull Shader = No backface culling
