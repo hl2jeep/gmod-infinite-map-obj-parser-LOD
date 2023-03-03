@@ -15,7 +15,7 @@ hook.Add("PostDrawOpaqueRenderables", "this_is_retarded", function()
         InfMap.parsed_object_lod_list = {}
         for i = 1, #InfMap.parsed_object_names do
             objectname2222 = InfMap.parsed_object_names[i]
-            if Vector(objectname2222.name):DistToSqr(LocalPlayer().CHUNK_OFFSET - Vector(1,1,1),LocalPlayer().CHUNK_OFFSET) < 6 then
+            if Vector(objectname2222.name):DistToSqr(LocalPlayer().CHUNK_OFFSET - Vector(1,1,1),LocalPlayer().CHUNK_OFFSET) then
                 table.insert(InfMap.parsed_object_lod_list, {
                     isculled = true,
                     originobjname = objectname2222.objname
