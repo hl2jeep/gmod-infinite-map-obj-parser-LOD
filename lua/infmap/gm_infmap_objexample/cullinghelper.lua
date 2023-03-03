@@ -1,8 +1,6 @@
 InfMap.parsed_object_names = InfMap.parsed_object_names or {}
 --InfMap.parsed_object_lod_list = InfMap.parsed_object_lod_list or {}
 local playervecstate = Vector()
---InfMap.globallocalplayerlmao = InfMap.globallocalplayerlmao
---InfMap.stupidbullshitfuckyou = InfMap.stupidbullshitfuckyou
 function clearTable(t)
     for k in pairs(t) do
       t[k] = nil
