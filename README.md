@@ -1,6 +1,8 @@
 # gmod-infinite-map-obj-parser-LOD
 A pretty simple LOD system for Mee12345's infinite map obj parser
 
+if you have any problems, feel free to dm me at hl2jeep#7958 (discord)
+
 
 
 ## Overview
