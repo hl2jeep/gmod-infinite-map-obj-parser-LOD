@@ -6,6 +6,7 @@ InfMap.parsed_object_names = {
         objname = "0_0_0"
     }
     --{
+        --dontcull = 1,
         --name = Vector(0,0,0),
         --objname = "0_1_0"
     --}
