@@ -51,7 +51,7 @@ end
 // if you want to have more than one map,
 // just copy the whole if statement and fill in what is needed.
 ```
-#### donotautorun/loadobjectobjexample
+#### autorun/loadobjectobjexample
 ```
 // Clear pervious data if it exists
 --InfMap.clear_parsed_objects()
