@@ -106,6 +106,8 @@ InfMap.parsed_object_names = {
       // make sure to put a comma on the curly bracket that came before it
       // don't put a comma on the last curly bracket in the list. 
     {
+        dontcull = 1, // you can add this line to any of the parts in the list
+        // to disable culling for that object.
         name = Vector(0,0,0),
         objname = "0_1_0"
     } // this is the last curly bracket. 
