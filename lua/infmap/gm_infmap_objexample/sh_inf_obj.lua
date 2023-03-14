@@ -370,4 +370,54 @@
                   end
               end
           end
-          cam.End3D)
+          cam.End3D()
+      end)
+  end
+  
+  
+  build_object_collision = function(ent, chunk)
+      if SERVER and InfMap.filter_entities(ent) then return end
+      if CLIENT and ent != LocalPlayer() then return end
+  
+      local chunk_coord = InfMap.ezcoord(chunk)
+      if IsValid(InfMap.parsed_objects[chunk_coord]) then return end
+  
+      local chunk_data = InfMap.parsed_collision_data[chunk_coord]
+      if !chunk_data then return end
+  
+      if SERVER then
+          for i = 1, #chunk_data do
+              local collider = ents.Create("infmap_obj_collider")
+              collider:SetModel("models/props_junk/CinderBlock01a.mdl")
+              collider:Spawn()
+              collider:UpdateCollision(chunk_data[i])
+              InfMap.prop_update_chunk(collider, chunk)
+              InfMap.parsed_objects[chunk_coord] = collider
+          end
+      else
+          timer.Simple(0, function()	// race condition
+              // try to find a collider in our chunk
+              local collider_len = #chunk_data
+              local collider_count = 1
+              for _, collider in ipairs(ents.FindByClass("infmap_obj_collider")) do
+                  if collider.CHUNK_OFFSET != LocalPlayer().CHUNK_OFFSET then continue end
+                  if collider:GetPhysicsObject():IsValid() then continue end
+                  
+                  // weird hack to prevent null physobjs on client
+                  if !collider.UpdateCollision then
+                      collider.RENDER_MESH = chunk_data[collider_count]
+                  else
+                      collider:UpdateCollision(chunk_data[collider_count])
+                  end
+  
+                  collider_count = collider_count + 1
+  
+                  // we found our colliders, stop looking
+                  if collider_count > collider_len then
+                      break
+                  end
+              end
+          end)
+      end
+  end
+  
